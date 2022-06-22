@@ -4,10 +4,10 @@ preRun:
     - yarn install
 preMerge:
   pattern:
-    - "./test/**/*.test.js"
+    - "./test/{unit,integration}/**/*.test.js"
 postMerge:
   pattern:
-    - "./test/**/*.test.js"
+    - "./test/{unit,integration}/**/*.test.js"
 postRun:
   command:
     - yarn --version
