@@ -7,4 +7,4 @@ framework: mocha
 postMerge:
   pattern:
     - "./test/unit/**/*.test.js"
-  configFile : mocharc.yml
+configFile : mocharc.yml
