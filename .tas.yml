@@ -1,15 +1,25 @@
-framework: mocha
-preRun:
-  command:
-    - yarn setup
-preMerge:
-  pattern:
-    - "./test/{unit,integration}/**/*.test.js"
+version: 2.0
+env:
+  FORCE_COLOR: 1
+  DB: sqlite3
+  NODE_ENV: testing
+  database__connection__filename: /dev/shm/ghost-test.db
+  database__connection__password: root
+
 postMerge:
-  pattern:
-    - "./test/{unit,integration}/**/*.test.js"
-postRun:
-  command:
-    - yarn --version
-configFile: mocharc.yml
-version: 1.0.0
+  preRun:
+     command:
+        - yarn setup
+  subModules:
+      - name: unit-tests      
+        path : "./"
+        pattern:
+          - "./test/unit/**/*.test.js"
+        framework : mocha
+        configFile : mocharc.yml
+        
+      - name: integration-tests      
+        path : "./"
+        pattern: 
+          - "./test/integration/**/*.test.js"
+        configFile : mocharc.yml
