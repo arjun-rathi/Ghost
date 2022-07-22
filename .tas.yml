@@ -1,27 +1,10 @@
-version: 2.0
+version: 1.0
 tier: medium
-env:
-  FORCE_COLOR: 1
-  DB: sqlite3
-  NODE_ENV: testing
-  database__connection__filename: /dev/shm/ghost-test.db
-  database__connection__password: root
-
+preRun:
+  command:
+    - yarn
+framework: mocha
 postMerge:
-  preRun:
-     command:
-        - yarn
-  subModules:
-      - name: unit-tests   
-        framework: mocha  
-        path : "./"
-        pattern:
-          - "./test/unit/**/*.test.js"
-        configFile : mocharc.yml
-        
-      # - name: integration-tests   
-      #   framework: mocha   
-      #   path : "./"
-      #   pattern: 
-      #     - "./test/integration/**/*.test.js"
-      #   configFile : mocharc.yml
+  pattern:
+    - "./test/unit/**/*.test.js"
+  configFile : mocharc.yml
