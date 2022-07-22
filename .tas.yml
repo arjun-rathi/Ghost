@@ -9,7 +9,7 @@ env:
 postMerge:
   preRun:
      command:
-        - yarn setup
+        - yarn
   subModules:
       - name: unit-tests      
         path : "./"
