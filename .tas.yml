@@ -19,9 +19,9 @@ postMerge:
           - "./test/unit/**/*.test.js"
         configFile : mocharc.yml
         
-      - name: integration-tests   
-        framework: mocha   
-        path : "./"
-        pattern: 
-          - "./test/integration/**/*.test.js"
-        configFile : mocharc.yml
+      # - name: integration-tests   
+      #   framework: mocha   
+      #   path : "./"
+      #   pattern: 
+      #     - "./test/integration/**/*.test.js"
+      #   configFile : mocharc.yml
