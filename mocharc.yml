@@ -1,4 +1,7 @@
 require:
   - test/utils/overrides.js
 exit: true
-timeout: 5000
+trace-warnings: true
+recursive: true
+extension: test.js
+timeout: 60000
