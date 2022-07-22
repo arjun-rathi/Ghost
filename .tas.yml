@@ -11,14 +11,16 @@ postMerge:
      command:
         - yarn
   subModules:
-      - name: unit-tests      
+      - name: unit-tests   
+        framework: mocha  
         path : "./"
         pattern:
           - "./test/unit/**/*.test.js"
         framework : mocha
         configFile : mocharc.yml
         
-      - name: integration-tests      
+      - name: integration-tests   
+        framework: mocha   
         path : "./"
         pattern: 
           - "./test/integration/**/*.test.js"
